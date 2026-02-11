@@ -16,11 +16,11 @@ while True:
                     count_upper += 1
                 elif char.islower():
                     count_lower +=1
-            return pass_rule_1
-        if count_upper <= 2:
-            print("Password must have 2 uppercase letters")
+            
+        if count_upper >= 1:
+            print("Password must have an uppercase letter")
         else:
-            break
+            print("hi")
 
 
 
