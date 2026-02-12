@@ -1,18 +1,25 @@
 while True:
     pass_foundation = input("Enter your password: ")
 
-    length = len(pass_foundation)> 5
+    length = len(pass_foundation)>= 10
     upper = any(char.isupper() for char in pass_foundation)
     lower = any(char.islower() for char in pass_foundation)
+    number = any(char.isnumeric() for char in pass_foundation)
+    special = any(not char.isalnum() for char in pass_foundation)
 
-    if length and upper and lower:
-        print(f"Password succsesfully created:\n new password {pass_foundation}")
+    if length and upper and lower and number and special:
+        print(f"\n*Password succsesfully created*\n\n-Your password: {pass_foundation}")
+        break
     elif not length:
-        print("Password must be at least 5 characters long: ")
+        print("\n-Password must be at least 10 characters long: \n")
     elif not upper:
-        print("Password must have at least 1 uppercase letter: ")
-    elif lower:
-        print("Password must have at least 1 lowercase letter: ")
+        print("\n-Password must have at least 1 uppercase letter: \n")
+    elif not lower:
+        print("\n-Password must have at least 1 lowercase letter: \n")
+    elif not number:
+        print("\n-Password must have at least 1 number: \n")
+    elif not special:
+        print("\n-Password must have at least 1 special character: \n")
     else:
         break
 
